@@ -15,7 +15,9 @@ limitations under the License.
 */
 package main
 
-import "github.com/reqww/hw-12/cmd"
+import (
+	"github.com/reqww/hw-12/cmd"
+)
 
 func main() {
 	cmd.Execute()

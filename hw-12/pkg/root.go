@@ -15,7 +15,7 @@ func CheckEnv(args []string) {
 		fmt.Printf("%s\n", val)
 	}
 	fmt.Println("Command line argumets:")
-	fmt.Print(args)
+	fmt.Println(args)
 }
 
 func RunEnvdir(args []string) error {
@@ -46,7 +46,6 @@ func ReadEnvFiles(path string) (map[string]string, error) {
 
 	for _, file_path := range files {
 		data, err := ioutil.ReadFile(file_path)
-		fmt.Println(file_path)
 		if err != nil {
 			return resMap, err
 		}
@@ -60,14 +59,14 @@ func ReadEnvFiles(path string) (map[string]string, error) {
 }
 
 func RunCmd(args []string, env map[string]string) error {
-	command := args[1]
-	currentArgs := args[2:]
+	currentArgs := args[1:]
 
 	for key, value := range env {
 		os.Setenv(key, value)
 	}
 
-	c1 := exec.Command(command, currentArgs...)
+	c1 := exec.Command(`.\hw-12.exe `, currentArgs...)
+	// c1 := exec.Command("ls")
 
 	c1.Stdout = os.Stdout
 
