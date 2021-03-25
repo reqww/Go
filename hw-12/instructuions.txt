@@ -1,0 +1,21 @@
+! Пакеты
+    # ининциализация пакета
+        $ go mod init <github-link>
+    # Установка зависимостей пакета
+        $ go mod tidy
+
+! Cobra
+    # установка 
+        $ go get github.com/spf13/cobra/cobra
+    # инициализация
+        $ cobra init --pkg-name <github-link>
+    # добавление команд
+        $ cobra add <option-name>
+
+! Окружение
+    # посмотреть текущие переменные окружения
+        $ env
+    # запустить программу prog с дополнительной переменой
+        $ NEWVAR=val prog
+    # запустить программу prog c чистым окружением и переменной NEWVAR
+        $ env -i NEWVAR=val prog
